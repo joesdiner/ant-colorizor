@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.tools.ant.Project;
 import org.apache.tools.ant.PropertyHelper;
 import org.apache.tools.ant.BuildException;
 
@@ -34,7 +33,7 @@ public class ColorPropertyEvaluator implements PropertyHelper.PropertyEvaluator 
   private static final Map<String, Integer> Colors;
   private static final Map<String, Integer> Formats;
   static {
-      Map<String, Integer> colorMap = new HashMap<>();
+      Map<String, Integer> colorMap = new HashMap<String, Integer>();
       colorMap.put("black",  30);
       colorMap.put("red",    31);
       colorMap.put("green",  32);
@@ -46,7 +45,7 @@ public class ColorPropertyEvaluator implements PropertyHelper.PropertyEvaluator 
       colorMap.put("gray",   37);
       Colors = Collections.unmodifiableMap(colorMap);
 
-      Map<String, Integer> formatMap = new HashMap<>();
+      Map<String, Integer> formatMap = new HashMap<String, Integer>();
       formatMap.put("normal",    0);
       formatMap.put("bold",      1);
       formatMap.put("dim",       2);
