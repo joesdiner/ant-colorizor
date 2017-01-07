@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project name="Rainbow Test" default="rainbow">
+  <componentdef classname="org.dogsplayingpoker.ant.PropertyHelpers.ColorPropertyEvaluator"
+                name="colorpropertyevaluator"
+                classpath="../../ant-colorizor.jar" />
+  <propertyhelper>
+    <colorpropertyevaluator />
+  </propertyhelper>
+
+  <target name="rainbow" description="Prints text with rainbow colors">
+    <echo>${color:red,bold}R${color:yellow}a${color:green}i${color:blue}n${color:cyan}b${color:purple}o${color:red}w${color:reset}</echo>
+  </target>
+</project>
