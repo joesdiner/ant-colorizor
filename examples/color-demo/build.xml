@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Color Demo" default="color-demo">
+  <!-- ant-contib will need to be in your classpath for this example to work
+       see http://ant-contrib.sourceforge.net/ -->
+  <taskdef resource="net/sf/antcontrib/antlib.xml"
+           classpath="ant-contrib.jar" />
+  
+  <componentdef classname="org.dogsplayingpoker.ant.PropertyHelpers.ColorPropertyEvaluator"
+                name="colorpropertyevaluator"
+                classpath="../../ant-colorizor.jar" />
+  <propertyhelper>
+    <colorpropertyevaluator />
+  </propertyhelper>
+  
+  <target name="color-demo" description="Shows all possible color/formatting combinations for your terminal">
+    <for list="0,1,2,4,5,7,8" param="format">
+      <sequential>
+        <for list="30,31,32,33,34,35,36,37" param="fg-color">
+          <sequential>
+            <var name="line.str" value="" />
+            <for list="40,41,42,43,44,45,46,47" param="bg-color">
+              <sequential>
+                <var name="line.str" value="${line.str}${color:@{format},@{fg-color},@{bg-color}}@{format};@{fg-color};@{bg-color}${color:reset} " />
+              </sequential>
+            </for>
+            <echo>${line.str}</echo>
+          </sequential>
+        </for>
+      </sequential>
+    </for>
+  </target>
+</project>
