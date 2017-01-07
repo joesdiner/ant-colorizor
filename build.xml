@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ant Colorizor" default="jar">
+  <property name="classes.dir" value="classes" />
+  <property name="src.dir"     value="src" />
+  <property name="jar.file"    value="ant-colorizor.jar" />
+
+
+  <target name="clean" description="Delete all generated files">
+    <delete dir="${classes.dir}" failonerror="false" />
+    <delete file="${jar.file}"  failonerror="false" />
+  </target>
+  
+  <target name="compile" description="Compiles the source code">
+    <mkdir dir="${classes.dir}"/>
+    <javac includeantruntime="true"
+           srcdir="${src.dir}"
+           destdir="${classes.dir}">
+      <compilerarg value="-Xlint:unchecked"/>
+    </javac>
+  </target>
+  
+  <target name="jar" description="JARs the class files" depends="compile">
+    <jar destfile="${jar.file}" basedir="${classes.dir}"/>
+  </target>
+</project>
