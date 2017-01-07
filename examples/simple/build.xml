@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<project name="Color Test" default="color-test">
+  <componentdef classname="org.dogsplayingpoker.ant.PropertyHelpers.ColorPropertyEvaluator"
+                name="colorpropertyevaluator"
+                classpath="../../ant-colorizor.jar" />
+  <propertyhelper>
+    <colorpropertyevaluator />
+  </propertyhelper>
+
+  <target name="color-test" description="Tests to see if colors work">
+    <echo>${color:red}Red Text${color:reset}</echo>
+  </target>
+</project>
