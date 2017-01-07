@@ -6,6 +6,8 @@ Note that this library is not doing any real magic and is just a convenient wrap
 
 For full documentation see http://www.joesdiner.org/programs/ant-colorizor/
 
+![Ant output with rainbow text](examples/rainbow/screenshot.png)
+
 ## Basic usage
 
 Add the following to your ant buildfile:
